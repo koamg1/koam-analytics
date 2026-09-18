@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Koam Analytics - independent quantitative research project, Santiago, Chile.">
+<title>Koam Analytics</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap">
+<style>
+  :root{
+    --ground:#F2F0EB; --surface:#FFFFFF; --line:#D9D5CC;
+    --ink:#161A17; --muted:#5F6862; --accent:#B0521F; --signal:#2F6B4F;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0E1211; --surface:#161B19; --line:#2A312E;
+      --ink:#E8EAE6; --muted:#9AA39D; --accent:#E08A4F; --signal:#6FBF95;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0E1211; --surface:#161B19; --line:#2A312E;
+    --ink:#E8EAE6; --muted:#9AA39D; --accent:#E08A4F; --signal:#6FBF95;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:var(--body);
+       font-weight:300;line-height:1.6;margin:0;padding:0 20px;font-size:16px}
+  .wrap{max-width:900px;margin:0 auto;padding-block:56px 72px}
+  h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+  h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.08}
+  h2{font-size:1.05rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+     color:var(--accent);margin-bottom:18px}
+  h3{font-size:1.12rem;font-weight:700;margin-bottom:6px}
+  p{margin:0 0 14px;max-width:66ch}
+  a{color:var(--accent);text-underline-offset:3px}
+  .eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;
+           text-transform:uppercase;color:var(--muted)}
+  header{border-bottom:1px solid var(--line);padding-bottom:34px;margin-bottom:44px}
+  .mark{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+  .glyph{width:34px;height:34px;border:1.5px solid var(--accent);color:var(--accent);
+         font-family:var(--mono);font-weight:500;display:grid;place-items:center;font-size:.95rem}
+  .name{font-family:var(--display);font-weight:700;letter-spacing:.12em;font-size:.85rem}
+  .lede{font-size:1.12rem;color:var(--muted);margin-top:18px;max-width:60ch}
+  .status{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .chip{font-family:var(--mono);font-size:.72rem;padding:5px 10px;border:1px solid var(--line);
+        color:var(--muted)}
+  .chip.live{border-color:var(--signal);color:var(--signal)}
+  section{margin-bottom:52px}
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  .scroller{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--muted);font-weight:500}
+  td.repo{font-family:var(--mono);font-size:.86rem;white-space:normal}
+  td.n{font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+  tbody tr:last-child td{border-bottom:none}
+  .note{font-size:.86rem;color:var(--muted);margin-top:10px}
+  .stack{display:grid;gap:26px}
+  @media(min-width:680px){.stack.two{grid-template-columns:1fr 1fr;gap:26px 34px}}
+  .need{border-left:2px solid var(--accent);padding-left:16px}
+  .need p{margin-bottom:0;font-size:.95rem;color:var(--muted)}
+  dl{margin:0;display:grid;gap:14px}
+  @media(min-width:680px){dl{grid-template-columns:repeat(2,1fr);gap:18px 34px}}
+  dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--muted);margin-bottom:3px}
+  dd{margin:0;font-size:.98rem}
+  footer{border-top:1px solid var(--line);padding-top:22px;font-size:.84rem;color:var(--muted);
+         display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+  code{font-family:var(--mono);font-size:.88em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">
+      <div class="glyph">K</div>
+      <div class="name">KOAM ANALYTICS</div>
+    </div>
+    <p class="eyebrow">Independent research project &middot; Santiago, Chile</p>
+    <h1>Quantitative execution and market telemetry, built in the open</h1>
+    <p class="lede">Nine working prototypes for market data collection, statistical
+      arbitrage and on-chain execution. Written and maintained by one founder.
+      Looking for the infrastructure to run them properly.</p>
+    <div class="status">
+      <span class="chip live">Stage: functional prototypes</span>
+      <span class="chip">Team: 1</span>
+      <span class="chip">Self-funded</span>
+      <span class="chip">No external investment</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>What exists today</h2>
+    <p>Every line below is a repository on disk, actively developed between August and
+      September 2026. File counts exclude dependencies and build artifacts.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr><th>Repository</th><th>Focus</th><th>Python</th><th>Solidity</th><th>Files</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="repo">finance_project</td><td>Market data &amp; strategy research</td><td class="n">476</td><td class="n">&mdash;</td><td class="n">3,664</td></tr>
+          <tr><td class="repo">koamflashloan</td><td>Flash-loan execution contracts</td><td class="n">65</td><td class="n">15</td><td class="n">1,204</td></tr>
+          <tr><td class="repo">HyperArb</td><td>Cross-venue arbitrage engine</td><td class="n">26</td><td class="n">&mdash;</td><td class="n">48</td></tr>
+          <tr><td class="repo">koamflasharb</td><td>Flash arbitrage routing</td><td class="n">19</td><td class="n">8</td><td class="n">3,963</td></tr>
+          <tr><td class="repo">KoamDepegHunter</td><td>Stablecoin depeg detection</td><td class="n">11</td><td class="n">&mdash;</td><td class="n">20</td></tr>
+          <tr><td class="repo">LoopYield</td><td>Yield loop strategies</td><td class="n">7</td><td class="n">6</td><td class="n">21</td></tr>
+          <tr><td class="repo">KoamObserver</td><td>Telemetry &amp; monitoring</td><td class="n">5</td><td class="n">&mdash;</td><td class="n">13</td></tr>
+          <tr><td class="repo">RobinArb</td><td>Spread scanner</td><td class="n">4</td><td class="n">&mdash;</td><td class="n">9</td></tr>
+          <tr><td class="repo">Bot_lighter</td><td>Execution client (TypeScript)</td><td class="n">&mdash;</td><td class="n">&mdash;</td><td class="n">19</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Totals: about 620 Python modules and 29 Solidity contracts across nine
+      prototypes. None of it is in production &mdash; that is precisely the gap.</p>
+  </section>
+
+  <section>
+    <h2>The data bank</h2>
+    <p>Two research repositories hold the market data collected so far &mdash; the asset the
+      whole project is built on, and the one that no longer fits on local disks.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr><th>Repository</th><th>Size on disk</th><th>Datasets</th><th>Files</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="repo">finance_project</td><td class="n">5.98 GB</td><td class="n">1,555</td><td class="n">3,664</td></tr>
+          <tr><td class="repo">Efinance_project_fondeo</td><td class="n">3.47 GB</td><td class="n">1,468</td><td class="n">3,217</td></tr>
+          <tr><td class="repo"><strong>Total</strong></td><td class="n"><strong>9.45 GB</strong></td><td class="n"><strong>3,023</strong></td><td class="n"><strong>6,881</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Sources collected: Binance, Bybit, OKX, Hyperliquid and MetaTrader 5,
+      across 1-minute, 1-hour and daily timeframes &mdash; plus funding rates, spreads,
+      contract specifications, index and gold series, and a dedicated data-quality folder
+      that checks gaps and anomalies before anything reaches a backtest.</p>
+  </section>
+
+  <section>
+    <h2>The problem being worked on</h2>
+    <div class="stack two">
+      <div>
+        <h3>Fragmented market data</h3>
+        <p>Retail feeds drop WebSocket connections during volatility spikes, exactly when
+          order-book depth matters most. Reconstructing a clean tick history afterwards is
+          slow and often impossible.</p>
+      </div>
+      <div>
+        <h3>No place to run it</h3>
+        <p>Collectors and execution workers need to sit close to venues and stay up
+          unattended. A single machine under a desk in Santiago holds 9.45 GB of collected
+          market data and runs every collector &mdash; the binding constraint on all nine
+          prototypes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What Azure would change</h2>
+    <div class="stack">
+      <div class="need">
+        <h3>Compute near the venues</h3>
+        <p>Virtual machines in US East and West Europe to host data collectors and execution
+          workers, instead of one residential connection in South America.</p>
+      </div>
+      <div class="need">
+        <h3>Storage for the data bank</h3>
+        <p>Blob Storage and Cosmos DB to migrate the existing 9.45 GB &mdash; 3,023 datasets
+          across five venues &mdash; and keep collecting past what local disks can hold.</p>
+      </div>
+      <div class="need">
+        <h3>Containers and observability</h3>
+        <p>Container Instances for isolated strategy workers, with Azure Monitor and
+          Application Insights for socket latency and execution metrics.</p>
+      </div>
+      <div class="need">
+        <h3>Azure OpenAI</h3>
+        <p>A natural-language layer over market microstructure data, so research questions
+          can be asked in plain terms instead of hand-written queries.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Project facts</h2>
+    <dl>
+      <div><dt>Stage</dt><dd>Functional prototypes, pre-revenue</dd></div>
+      <div><dt>Team size</dt><dd>1 founder</dd></div>
+      <div><dt>Funding</dt><dd>Bootstrapped, no external capital</dd></div>
+      <div><dt>Stack</dt><dd>Python, Solidity, TypeScript, MQL5</dd></div>
+      <div><dt>Markets studied</dt><dd>DAX, US100, DeFi liquidity pools</dd></div>
+      <div><dt>Planned model</dt><dd>B2B data API subscriptions (not yet launched)</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Draybels D&iacute;az Hern&aacute;ndez &mdash; founder and sole developer<br>
+      <a href="mailto:wjesus19697106@gmail.com">wjesus19697106@gmail.com</a><br>
+      Santiago, Chile</p>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Koam Analytics &middot; Independent project, Santiago, Chile</div>
+    <div class="eyebrow">Prototype stage &mdash; no production deployment yet</div>
+  </footer>
+</div>
+</body>
+</html>
