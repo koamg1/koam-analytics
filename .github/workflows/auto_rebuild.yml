@@ -2,8 +2,8 @@ name: Auto-rebuild Koam Analytics Web
 
 on:
   schedule:
-    # Diario 06:00 UTC (03:00 CLT)
-    - cron: '0 6 * * *'
+    # Cada 2 horas
+    - cron: '0 */2 * * *'
   workflow_dispatch:  # permite disparo manual desde GitHub UI
 
 jobs:
