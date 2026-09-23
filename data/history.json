@@ -1,0 +1,33 @@
+{
+ "generado_utc": "2026-09-23T05:33:42.532618+00:00",
+ "total": 262,
+ "desde": "2021-05-07",
+ "hasta": "2026-09-22",
+ "repeg_7d_pct": 78.6,
+ "repeg_ever_pct": 90.1,
+ "mediana_dias": 3.0,
+ "espiral_pct": 17.9,
+ "n_big": 38,
+ "espiral_big_pct": 71.1,
+ "denominador": "todos los episodios (base rate real)",
+ "por_mecanismo": [
+  {
+   "mecanismo": "algorithmic",
+   "n": 22,
+   "rec7": 81.8,
+   "espiral": 4.5
+  },
+  {
+   "mecanismo": "crypto-backed",
+   "n": 173,
+   "rec7": 75.1,
+   "espiral": 20.2
+  },
+  {
+   "mecanismo": "fiat-backed",
+   "n": 67,
+   "rec7": 86.6,
+   "espiral": 16.4
+  }
+ ]
+}

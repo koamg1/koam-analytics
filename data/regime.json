@@ -1,0 +1,30 @@
+{
+  "generado_utc": "2026-09-22T21:10:46.612203+00:00",
+  "fecha_datos": "2026-09-22",
+  "capa": "C2_regimen",
+  "modelo": "regime_v1",
+  "regimen": "calma",
+  "prob_regimen": {
+    "calma": 1.0,
+    "normal": 0.0,
+    "estres": 0.0,
+    "panico": 0.0
+  },
+  "p_caida_btc_10pct_10d": null,
+  "predictor_dd10_validado": false,
+  "btc_vol_anual_20d": 0.483,
+  "indicadores": {
+    "btc_dd_90": -0.0044,
+    "btc_mom_30": 0.1038,
+    "spx_rv_20": 0.0971,
+    "vix": 14.87,
+    "vix_z_1y": -0.945,
+    "dxy_chg_20": 0.0076,
+    "y10_chg_20": 0.17,
+    "credito_chg_20": -0.0045,
+    "stable_chg_30": 0.0115,
+    "fng": 78.0,
+    "btc_spx_corr_60": -0.1351
+  },
+  "semaforo": "verde"
+}

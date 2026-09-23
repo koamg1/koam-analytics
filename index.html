@@ -1,212 +1,90 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Koam Analytics - independent quantitative research project, Santiago, Chile.">
-<title>Koam Analytics</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koam Analytics — On-chain stablecoin risk</title>
+<meta name="description" content="Independent on-chain research on stablecoin peg risk, market regime and DeFi liquidation risk. Every alert tracked publicly.">
 <style>
-  :root{
-    --ground:#F2F0EB; --surface:#FFFFFF; --line:#D9D5CC;
-    --ink:#161A17; --muted:#5F6862; --accent:#B0521F; --signal:#2F6B4F;
-    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
-    --body:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --ground:#0E1211; --surface:#161B19; --line:#2A312E;
-      --ink:#E8EAE6; --muted:#9AA39D; --accent:#E08A4F; --signal:#6FBF95;
-    }
-  }
-  :root[data-theme="dark"]{
-    --ground:#0E1211; --surface:#161B19; --line:#2A312E;
-    --ink:#E8EAE6; --muted:#9AA39D; --accent:#E08A4F; --signal:#6FBF95;
-  }
-  *{box-sizing:border-box}
-  body{background:var(--ground);color:var(--ink);font-family:var(--body);
-       font-weight:300;line-height:1.6;margin:0;padding:0 20px;font-size:16px}
-  .wrap{max-width:900px;margin:0 auto;padding-block:56px 72px}
-  h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
-  h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.08}
-  h2{font-size:1.05rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-     color:var(--accent);margin-bottom:18px}
-  h3{font-size:1.12rem;font-weight:700;margin-bottom:6px}
-  p{margin:0 0 14px;max-width:66ch}
-  a{color:var(--accent);text-underline-offset:3px}
-  .eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;
-           text-transform:uppercase;color:var(--muted)}
-  header{border-bottom:1px solid var(--line);padding-bottom:34px;margin-bottom:44px}
-  .mark{display:flex;align-items:center;gap:12px;margin-bottom:34px}
-  .glyph{width:34px;height:34px;border:1.5px solid var(--accent);color:var(--accent);
-         font-family:var(--mono);font-weight:500;display:grid;place-items:center;font-size:.95rem}
-  .name{font-family:var(--display);font-weight:700;letter-spacing:.12em;font-size:.85rem}
-  .lede{font-size:1.12rem;color:var(--muted);margin-top:18px;max-width:60ch}
-  .status{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-  .chip{font-family:var(--mono);font-size:.72rem;padding:5px 10px;border:1px solid var(--line);
-        color:var(--muted)}
-  .chip.live{border-color:var(--signal);color:var(--signal)}
-  section{margin-bottom:52px}
-  table{width:100%;border-collapse:collapse;font-size:.92rem}
-  .scroller{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
-  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
-  th{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
-     color:var(--muted);font-weight:500}
-  td.repo{font-family:var(--mono);font-size:.86rem;white-space:normal}
-  td.n{font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
-  tbody tr:last-child td{border-bottom:none}
-  .note{font-size:.86rem;color:var(--muted);margin-top:10px}
-  .stack{display:grid;gap:26px}
-  @media(min-width:680px){.stack.two{grid-template-columns:1fr 1fr;gap:26px 34px}}
-  .need{border-left:2px solid var(--accent);padding-left:16px}
-  .need p{margin-bottom:0;font-size:.95rem;color:var(--muted)}
-  dl{margin:0;display:grid;gap:14px}
-  @media(min-width:680px){dl{grid-template-columns:repeat(2,1fr);gap:18px 34px}}
-  dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-     color:var(--muted);margin-bottom:3px}
-  dd{margin:0;font-size:.98rem}
-  footer{border-top:1px solid var(--line);padding-top:22px;font-size:.84rem;color:var(--muted);
-         display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
-  code{font-family:var(--mono);font-size:.88em}
+:root{--bg:#0b0f14;--panel:#121821;--line:#1f2a36;--text:#e6edf3;--mute:#8b98a5;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--acc:#58a6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);padding:18px 0}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:700;letter-spacing:.2px}.brand span{color:var(--mute);font-weight:400}
+nav a{margin-left:16px;color:var(--mute);font-size:14px}
+.hero{padding:40px 0 24px}.hero h1{font-size:clamp(24px,4vw,34px);margin:0 0 8px;line-height:1.2}.hero p{color:var(--mute);max-width:680px;margin:0}
+section{padding:22px 0}h2{font-size:18px;margin:0 0 12px}.sub{color:var(--mute);font-size:13px;margin:-6px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.k{color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.6px}.v{font-size:22px;font-weight:650;margin-top:4px}
+.tbl{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}
+.tbl th,.tbl td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left}.tbl th{color:var(--mute);font-weight:500;font-size:12px;text-transform:uppercase}
+.tbl td.n{text-align:right;font-variant-numeric:tabular-nums}.scroll{overflow-x:auto}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;border:1px solid var(--line)}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}.mute{color:var(--mute)}
+.empty{color:var(--mute);background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:16px}
+ul.limits{color:var(--mute);padding-left:18px;margin:0}code{font-size:12px;color:var(--mute)}
+footer{border-top:1px solid var(--line);margin-top:28px;padding:20px 0 40px;color:var(--mute);font-size:13px}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="mark">
-      <div class="glyph">K</div>
-      <div class="name">KOAM ANALYTICS</div>
-    </div>
-    <p class="eyebrow">Independent research project &middot; Santiago, Chile</p>
-    <h1>Quantitative execution and market telemetry, built in the open</h1>
-    <p class="lede">Nine working prototypes for market data collection, statistical
-      arbitrage and on-chain execution. Written and maintained by one founder.
-      Looking for the infrastructure to run them properly.</p>
-    <div class="status">
-      <span class="chip live">Stage: functional prototypes</span>
-      <span class="chip">Team: 1</span>
-      <span class="chip">Self-funded</span>
-      <span class="chip">No external investment</span>
-    </div>
-  </header>
+<header><div class="wrap"><div class="brand">Koam Analytics <span>· independent on-chain risk research</span></div>
+<nav><a href="#now">Now</a><a href="#history">History</a><a href="#track">Track record</a><a href="#evidence">Evidence</a><a href="#method">Method</a><a href="https://x.com/koomydepeg">@koomydepeg</a></nav></div></header>
+<main class="wrap">
+<div class="hero"><h1>Stablecoin peg risk, read directly from the chain.</h1>
+<p>We monitor stablecoins and DeFi pools, put every deviation in historical context, and publish the outcome of every alert — including the ones we get wrong.</p></div>
 
-  <section>
-    <h2>What exists today</h2>
-    <p>Every line below is a repository on disk, actively developed between August and
-      September 2026. File counts exclude dependencies and build artifacts.</p>
-    <div class="scroller">
-      <table>
-        <thead>
-          <tr><th>Repository</th><th>Focus</th><th>Python</th><th>Solidity</th><th>Files</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="repo">finance_project</td><td>Market data &amp; strategy research</td><td class="n">476</td><td class="n">&mdash;</td><td class="n">3,664</td></tr>
-          <tr><td class="repo">koamflashloan</td><td>Flash-loan execution contracts</td><td class="n">65</td><td class="n">15</td><td class="n">1,204</td></tr>
-          <tr><td class="repo">HyperArb</td><td>Cross-venue arbitrage engine</td><td class="n">26</td><td class="n">&mdash;</td><td class="n">48</td></tr>
-          <tr><td class="repo">koamflasharb</td><td>Flash arbitrage routing</td><td class="n">19</td><td class="n">8</td><td class="n">3,963</td></tr>
-          <tr><td class="repo">KoamDepegHunter</td><td>Stablecoin depeg detection</td><td class="n">11</td><td class="n">&mdash;</td><td class="n">20</td></tr>
-          <tr><td class="repo">LoopYield</td><td>Yield loop strategies</td><td class="n">7</td><td class="n">6</td><td class="n">21</td></tr>
-          <tr><td class="repo">KoamObserver</td><td>Telemetry &amp; monitoring</td><td class="n">5</td><td class="n">&mdash;</td><td class="n">13</td></tr>
-          <tr><td class="repo">RobinArb</td><td>Spread scanner</td><td class="n">4</td><td class="n">&mdash;</td><td class="n">9</td></tr>
-          <tr><td class="repo">Bot_lighter</td><td>Execution client (TypeScript)</td><td class="n">&mdash;</td><td class="n">&mdash;</td><td class="n">19</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">Totals: about 620 Python modules and 29 Solidity contracts across nine
-      prototypes. None of it is in production &mdash; that is precisely the gap.</p>
-  </section>
+<section id="history"><h2>Historical base rates — 262 depegs since 2021</h2>
+<p class="sub" id="hist-t"></p><div class="grid" id="hist-sum"></div><div style="height:12px"></div>
+<div class="scroll" id="hist-mec"></div></section>
 
-  <section>
-    <h2>The data bank</h2>
-    <p>Two research repositories hold the market data collected so far &mdash; the asset the
-      whole project is built on, and the one that no longer fits on local disks.</p>
-    <div class="scroller">
-      <table>
-        <thead>
-          <tr><th>Repository</th><th>Size on disk</th><th>Datasets</th><th>Files</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="repo">finance_project</td><td class="n">5.98 GB</td><td class="n">1,555</td><td class="n">3,664</td></tr>
-          <tr><td class="repo">Efinance_project_fondeo</td><td class="n">3.47 GB</td><td class="n">1,468</td><td class="n">3,217</td></tr>
-          <tr><td class="repo"><strong>Total</strong></td><td class="n"><strong>9.45 GB</strong></td><td class="n"><strong>3,023</strong></td><td class="n"><strong>6,881</strong></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note">Sources collected: Binance, Bybit, OKX, Hyperliquid and MetaTrader 5,
-      across 1-minute, 1-hour and daily timeframes &mdash; plus funding rates, spreads,
-      contract specifications, index and gold series, and a dedicated data-quality folder
-      that checks gaps and anomalies before anything reaches a backtest.</p>
-  </section>
+<section id="now"><h2>Market now</h2><p class="sub" id="now-t"></p><div class="grid" id="regime"></div></section>
 
-  <section>
-    <h2>The problem being worked on</h2>
-    <div class="stack two">
-      <div>
-        <h3>Fragmented market data</h3>
-        <p>Retail feeds drop WebSocket connections during volatility spikes, exactly when
-          order-book depth matters most. Reconstructing a clean tick history afterwards is
-          slow and often impossible.</p>
-      </div>
-      <div>
-        <h3>No place to run it</h3>
-        <p>Collectors and execution workers need to sit close to venues and stay up
-          unattended. A single machine under a desk in Santiago holds 9.45 GB of collected
-          market data and runs every collector &mdash; the binding constraint on all nine
-          prototypes.</p>
-      </div>
-    </div>
-  </section>
+<section><h2>Stablecoins on watch</h2><p class="sub" id="st-t"></p><div class="scroll" id="stables"></div></section>
 
-  <section>
-    <h2>What Azure would change</h2>
-    <div class="stack">
-      <div class="need">
-        <h3>Compute near the venues</h3>
-        <p>Virtual machines in US East and West Europe to host data collectors and execution
-          workers, instead of one residential connection in South America.</p>
-      </div>
-      <div class="need">
-        <h3>Storage for the data bank</h3>
-        <p>Blob Storage and Cosmos DB to migrate the existing 9.45 GB &mdash; 3,023 datasets
-          across five venues &mdash; and keep collecting past what local disks can hold.</p>
-      </div>
-      <div class="need">
-        <h3>Containers and observability</h3>
-        <p>Container Instances for isolated strategy workers, with Azure Monitor and
-          Application Insights for socket latency and execution metrics.</p>
-      </div>
-      <div class="need">
-        <h3>Azure OpenAI</h3>
-        <p>A natural-language layer over market microstructure data, so research questions
-          can be asked in plain terms instead of hand-written queries.</p>
-      </div>
-    </div>
-  </section>
+<section id="track"><h2>Public track record</h2><p class="sub">Every alert, what happened after, measured from our own snapshots.</p>
+<div class="grid" id="track-sum"></div><div style="height:12px"></div><div class="scroll" id="track-tbl"></div></section>
 
-  <section>
-    <h2>Project facts</h2>
-    <dl>
-      <div><dt>Stage</dt><dd>Functional prototypes, pre-revenue</dd></div>
-      <div><dt>Team size</dt><dd>1 founder</dd></div>
-      <div><dt>Funding</dt><dd>Bootstrapped, no external capital</dd></div>
-      <div><dt>Stack</dt><dd>Python, Solidity, TypeScript, MQL5</dd></div>
-      <div><dt>Markets studied</dt><dd>DAX, US100, DeFi liquidity pools</dd></div>
-      <div><dt>Planned model</dt><dd>B2B data API subscriptions (not yet launched)</dd></div>
-    </dl>
-  </section>
+<section><h2>DeFi liquidation map</h2><p class="sub">Aave V3 debt that becomes liquidatable if collateral prices fall.</p><div class="empty">Coming soon — data pipeline in deployment.</div></section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Draybels D&iacute;az Hern&aacute;ndez &mdash; founder and sole developer<br>
-      <a href="mailto:wjesus19697106@gmail.com">wjesus19697106@gmail.com</a><br>
-      Santiago, Chile</p>
-  </section>
+<section id="evidence"><h2>On-chain evidence</h2><p class="sub">Contracts we operate. Verify them yourself.</p><div class="scroll" id="contracts"></div></section>
 
-  <footer>
-    <div>&copy; 2026 Koam Analytics &middot; Independent project, Santiago, Chile</div>
-    <div class="eyebrow">Prototype stage &mdash; no production deployment yet</div>
-  </footer>
-</div>
-</body>
-</html>
+<section id="method"><h2>Method &amp; limits</h2><ul class="limits">
+<li>Peg data: DefiLlama stablecoin prices (aggregated), sampled every 15 min. On-chain pool reads (Curve, Uniswap V3, PancakeSwap V3, Camelot V3) are being added.</li>
+<li>"Re-pegged" = price back within 20 bps of $1. Time resolution = sampling interval.</li>
+<li>Historical base rates: 262 depeg episodes since 2021 (daily data; survivorship bias: only stablecoins still listed).</li>
+<li>Market regime: 4-state hidden Markov model on 11 years of public market data. It describes the current state; it does not predict prices.</li>
+<li>Public alerts are delayed. Nothing here is financial advice.</li></ul></section>
+</main>
+<footer><div class="wrap">Koam Analytics · built by an independent developer on free-tier infrastructure · <a href="https://x.com/koomydepeg">@koomydepeg</a></div></footer>
+<script>
+const $=id=>document.getElementById(id), j=u=>fetch(u,{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null);
+const empty=m=>`<div class="empty">${m}</div>`, fmt=(x,d=0)=>{if(x==null)return"—";let r=Number(x).toLocaleString("en-US",{maximumFractionDigits:d,minimumFractionDigits:d});return /^-0(\.0+)?$/.test(r)?r.slice(1):r};
+const card=(k,v,c="")=>`<div class="card"><div class="k">${k}</div><div class="v ${c}">${v}</div></div>`;
+(async()=>{
+ const [rg,st,tr,ct,hi]=await Promise.all([j("data/regime.json"),j("data/stables.json"),j("data/track_record.json"),j("data/contracts.json"),j("data/history.json")]);
+
+ if(hi){$("hist-t").textContent=`${hi.total} episodes · ${hi.desde} to ${hi.hasta} · daily data, DefiLlama`;
+  $("hist-sum").innerHTML=card("Re-pegged within 7 days",fmt(hi.repeg_7d_pct,1)+"%","ok")+card("Re-pegged eventually",fmt(hi.repeg_ever_pct,1)+"%","ok")+card("Median time to re-peg",fmt(hi.mediana_dias,1)+" days")+card("Spiralled (never recovered path)",fmt(hi.espiral_pct,1)+"%","warn")+card("If drop > 500 bps: spiral",fmt(hi.espiral_big_pct,1)+"%","bad");
+  $("hist-mec").innerHTML=`<table class="tbl"><tr><th>Mechanism</th><th class="n">Episodes</th><th class="n">Re-peg ≤7d</th><th class="n">Spiralled</th></tr>`+
+  hi.por_mecanismo.map(m=>`<tr><td>${m.mecanismo}</td><td class="n">${m.n}</td><td class="n">${fmt(m.rec7,1)}%</td><td class="n">${fmt(m.espiral,1)}%</td></tr>`).join("")+"</table>";}
+ else $("hist-sum").innerHTML=empty("No data yet.");
+ if(rg){const i=rg.indicadores||{},c={verde:"ok",ambar:"warn",rojo:"bad"}[rg.semaforo]||"",name={calma:"Calm",normal:"Normal",estres:"Stress",panico:"Panic"}[rg.regimen]||rg.regimen;
+  $("now-t").textContent=`Data as of ${rg.fecha_datos}`;
+  $("regime").innerHTML=card("Market regime",name,c)+card("BTC 20d volatility",fmt(rg.btc_vol_anual_20d*100)+"%")+card("BTC drawdown (90d high)",fmt((i.btc_dd_90||0)*100,1)+"%")+card("VIX",fmt(i.vix,1))+card("Fear & Greed",fmt(i.fng));}
+ else $("regime").innerHTML=empty("No data yet.");
+ if(st){$("st-t").textContent=`Snapshot ${st.t.slice(0,16)} UTC · ${st.stables.length} USD stablecoins with supply ≥ $100M`;
+  const rows=st.stables.filter(s=>s.estado!=="OK").concat(st.stables.filter(s=>s.estado==="OK").slice(0,6));
+  const cl={CRITICAL:"bad",ALERT:"warn",WATCH:"warn",OK:"ok"};
+  $("stables").innerHTML=`<table class="tbl"><tr><th>Stablecoin</th><th>Type</th><th class="n">Price</th><th class="n">Deviation</th><th class="n">Supply</th><th class="n">24h supply</th><th>Status</th></tr>`+
+  rows.map(s=>`<tr><td>${s.symbol}</td><td class="mute">${s.mecanismo||""}</td><td class="n">$${fmt(s.precio,4)}</td><td class="n">${fmt(s.desvio_bps)} bps</td><td class="n">$${fmt(s.supply_usd/1e9,2)}B</td><td class="n">${s.supply_chg_24h_pct==null?"—":fmt(s.supply_chg_24h_pct,1)+"%"}</td><td><span class="pill ${cl[s.estado]||""}">${s.estado}</span></td></tr>`).join("")+"</table>";}
+ else $("stables").innerHTML=empty("No data yet.");
+ if(tr&&tr.episodios&&tr.episodios.length){const r=tr.resumen;
+  $("track-sum").innerHTML=card("Alerts tracked",r.episodios)+card("Re-pegged",r.repegged,"ok")+card("Still open",r.abiertos,"warn")+card("Median time to re-peg",r.mediana_horas_repeg==null?"—":r.mediana_horas_repeg+" h");
+  $("track-tbl").innerHTML=`<table class="tbl"><tr><th>Alert (UTC)</th><th>Stablecoin</th><th>Type</th><th class="n">At alert</th><th class="n">Worst</th><th>Outcome</th></tr>`+
+  tr.episodios.map(e=>`<tr><td>${String(e.t0).slice(0,16).replace("T"," ")}</td><td>${e.symbol}</td><td class="mute">${e.tipo}</td><td class="n">${fmt(e.dev0_bps)} bps</td><td class="n">${fmt(e.peor_dev_bps)} bps</td><td>${e.estado==="repegged"?`<span class="ok">re-pegged in ${e.horas_abierto} h</span>`:e.estado==="open"?`<span class="warn">open · ${e.horas_abierto} h</span>`:"closed"}</td></tr>`).join("")+"</table>";}
+ else {$("track-sum").innerHTML="";$("track-tbl").innerHTML=empty("First alerts are being tracked. Outcomes appear here 24 h after each alert.");}
+ if(ct)$("contracts").innerHTML=`<table class="tbl"><tr><th>Chain</th><th>Contract</th><th>Address</th></tr>`+ct.contracts.map(c=>`<tr><td>${c.chain}</td><td>${c.name}</td><td><a href="${c.explorer}${c.address}" target="_blank" rel="noopener"><code>${c.address.slice(0,8)}…${c.address.slice(-6)}</code></a></td></tr>`).join("")+"</table>";
+})();
+</script>
+</body></html>

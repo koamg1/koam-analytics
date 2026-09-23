@@ -1,0 +1,34 @@
+{
+ "contracts": [
+  {
+   "chain": "Arbitrum",
+   "name": "KoamFlashArb (depeg arbitrage)",
+   "address": "0x21A997434A71C08F81d99B85e25173601F418dec",
+   "explorer": "https://arbiscan.io/address/"
+  },
+  {
+   "chain": "Base",
+   "name": "KoamFlashArb (depeg arbitrage)",
+   "address": "0x4726a4c60761afc82A48b557d2b6a49d8EF8ED46",
+   "explorer": "https://basescan.org/address/"
+  },
+  {
+   "chain": "BNB Chain",
+   "name": "KoamFlashArbBSC v2 (depeg arbitrage)",
+   "address": "0x9233D9203a1825d13e029973485bAa1dF204FCf0",
+   "explorer": "https://bscscan.com/address/"
+  },
+  {
+   "chain": "Arbitrum",
+   "name": "Aave V3 liquidator",
+   "address": "0x73d1C01297027325993Fbaf534269A4DCbA89Bb7",
+   "explorer": "https://arbiscan.io/address/"
+  },
+  {
+   "chain": "Arbitrum",
+   "name": "Compound V3 liquidator",
+   "address": "0x3A1b63d24DC032397f9334E5436e6cca326c8364",
+   "explorer": "https://arbiscan.io/address/"
+  }
+ ]
+}
