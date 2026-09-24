@@ -1,10 +1,7 @@
 name: Auto-rebuild Koam Analytics Web
 
 on:
-  schedule:
-    # Cada 2 horas (minuto 17 para evitar congestión del inicio de hora)
-    - cron: '17 */2 * * *'
-  workflow_dispatch:  # permite disparo manual desde GitHub UI
+  workflow_dispatch:  # permite disparo manual desde GitHub UI (la publicación automática ahora corre desde Santiago 2)
 
 jobs:
   rebuild:
