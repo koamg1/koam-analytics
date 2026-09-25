@@ -1,18 +1,36 @@
 {
- "generado_utc": "2026-09-25T15:17:08.830465+00:00",
+ "generado_utc": "2026-09-25T15:32:09.841865+00:00",
  "resumen": {
   "desde": "2026-09-22 21:12:01.823276+00:00",
-  "hasta": "2026-09-25 15:15:21.756211+00:00",
-  "episodios": 10,
-  "episodios_precio": 7,
+  "hasta": "2026-09-25 15:30:12.260849+00:00",
+  "episodios": 11,
+  "episodios_precio": 8,
   "repegged": 4,
-  "abiertos": 3,
-  "repeg_24h_pct": 42.9,
+  "abiertos": 4,
+  "repeg_24h_pct": 37.5,
   "mediana_horas_repeg": 2.0,
   "resolucion_min": 15,
   "fuente": "DefiLlama stablecoin prices, snapshots every 15 min"
  },
  "episodios": [
+  {
+   "symbol": "SOFID",
+   "mecanismo": "fiat-backed",
+   "t0": "2026-09-25T15:30:12.260849+00:00",
+   "precio0": 0.99217,
+   "dev0_bps": -78.3,
+   "supply0": 320339370.1959076,
+   "tipo": "price",
+   "peor_dev_bps": -78.3,
+   "t_repeg": null,
+   "ultimo_dev_bps": -78.3,
+   "ultimo_supply": 320339370.1959076,
+   "t_ultimo": "2026-09-25T15:30:12.260849+00:00",
+   "id": "SOFID_202609251530",
+   "horas_abierto": 0.0,
+   "estado": "open",
+   "publica": false
+  },
   {
    "symbol": "BUSD",
    "mecanismo": "crypto-backed",
@@ -42,7 +60,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T00:30:11.375832+00:00",
    "id": "PYUSD_202609240330",
-   "horas_abierto": 35.8,
+   "horas_abierto": 36.0,
    "estado": "closed",
    "publica": true
   },
@@ -58,7 +76,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T01:30:11.773806+00:00",
    "id": "USDai_202609232200",
-   "horas_abierto": 41.3,
+   "horas_abierto": 41.5,
    "estado": "closed",
    "publica": false
   },
@@ -123,11 +141,11 @@
    "tipo": "price",
    "peor_dev_bps": -89.6,
    "t_repeg": null,
-   "ultimo_dev_bps": -73.0,
-   "ultimo_supply": 151537927.52466568,
-   "t_ultimo": "2026-09-25T15:15:21.756211+00:00",
+   "ultimo_dev_bps": -80.8,
+   "ultimo_supply": 151478744.02112156,
+   "t_ultimo": "2026-09-25T15:30:12.260849+00:00",
    "id": "FRAX_202609222112",
-   "horas_abierto": 66.1,
+   "horas_abierto": 66.3,
    "estado": "open",
    "publica": false
   },
@@ -143,7 +161,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-23T01:30:10.260536+00:00",
    "id": "USX_202609222112",
-   "horas_abierto": 66.1,
+   "horas_abierto": 66.3,
    "estado": "closed",
    "publica": false
   },
@@ -159,9 +177,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -196.7,
    "ultimo_supply": 310772966.3321613,
-   "t_ultimo": "2026-09-25T15:15:21.756211+00:00",
+   "t_ultimo": "2026-09-25T15:30:12.260849+00:00",
    "id": "apxUSD_202609222112",
-   "horas_abierto": 66.1,
+   "horas_abierto": 66.3,
    "estado": "open",
    "publica": true
   },
@@ -179,7 +197,7 @@
    "ultimo_supply": 148804681.99081507,
    "t_ultimo": "2026-09-25T02:15:09.151743+00:00",
    "id": "satUSD_202609222112",
-   "horas_abierto": 66.1,
+   "horas_abierto": 66.3,
    "estado": "open",
    "publica": true
   }
