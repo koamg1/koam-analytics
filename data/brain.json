@@ -73,10 +73,6 @@
     [
       "Spread probe (trading_trades)",
       1
-    ],
-    [
-      "Oracle gap + debt",
-      1
     ]
   ],
   "milestones": [
