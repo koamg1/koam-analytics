@@ -1,8 +1,8 @@
 {
- "generado_utc": "2026-09-27T14:47:05.667198+00:00",
+ "generado_utc": "2026-09-27T15:02:10.768537+00:00",
  "resumen": {
   "desde": "2026-09-22 21:12:01.823276+00:00",
-  "hasta": "2026-09-27 14:45:05.151707+00:00",
+  "hasta": "2026-09-27 15:00:13.354512+00:00",
   "episodios": 14,
   "episodios_precio": 11,
   "repegged": 8,
@@ -110,7 +110,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T00:30:11.375832+00:00",
    "id": "PYUSD_202609240330",
-   "horas_abierto": 83.3,
+   "horas_abierto": 83.5,
    "estado": "closed",
    "publica": true
   },
@@ -126,7 +126,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T01:30:11.773806+00:00",
    "id": "USDai_202609232200",
-   "horas_abierto": 88.8,
+   "horas_abierto": 89.0,
    "estado": "closed",
    "publica": false
   },
@@ -193,9 +193,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -77.6,
    "ultimo_supply": 151449985.59149367,
-   "t_ultimo": "2026-09-27T14:45:05.151707+00:00",
+   "t_ultimo": "2026-09-27T15:00:13.354512+00:00",
    "id": "FRAX_202609222112",
-   "horas_abierto": 113.6,
+   "horas_abierto": 113.8,
    "estado": "open",
    "publica": false
   },
@@ -211,7 +211,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-23T01:30:10.260536+00:00",
    "id": "USX_202609222112",
-   "horas_abierto": 113.6,
+   "horas_abierto": 113.8,
    "estado": "closed",
    "publica": false
   },
@@ -227,9 +227,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -220.9,
    "ultimo_supply": 310012449.7183598,
-   "t_ultimo": "2026-09-27T14:45:05.151707+00:00",
+   "t_ultimo": "2026-09-27T15:00:13.354512+00:00",
    "id": "apxUSD_202609222112",
-   "horas_abierto": 113.6,
+   "horas_abierto": 113.8,
    "estado": "open",
    "publica": true
   },
@@ -245,9 +245,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -53.3,
    "ultimo_supply": 148806295.93576112,
-   "t_ultimo": "2026-09-27T14:45:05.151707+00:00",
+   "t_ultimo": "2026-09-27T15:00:13.354512+00:00",
    "id": "satUSD_202609222112",
-   "horas_abierto": 113.6,
+   "horas_abierto": 113.8,
    "estado": "open",
    "publica": true
   }
