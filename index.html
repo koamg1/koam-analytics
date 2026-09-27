@@ -2,89 +2,151 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Koam Analytics — On-chain stablecoin risk</title>
-<meta name="description" content="Independent on-chain research on stablecoin peg risk, market regime and DeFi liquidation risk. Every alert tracked publicly.">
+<title>Koam Analytics — The Brain</title>
+<meta name="description" content="A risk brain growing in public. Every neuron is a live sensor; every synapse, a verified alert.">
 <style>
-:root{--bg:#0b0f14;--panel:#121821;--line:#1f2a36;--text:#e6edf3;--mute:#8b98a5;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--acc:#58a6ff}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header{border-bottom:1px solid var(--line);padding:18px 0}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.brand{font-weight:700;letter-spacing:.2px}.brand span{color:var(--mute);font-weight:400}
-nav a{margin-left:16px;color:var(--mute);font-size:14px}
-.hero{padding:40px 0 24px}.hero h1{font-size:clamp(24px,4vw,34px);margin:0 0 8px;line-height:1.2}.hero p{color:var(--mute);max-width:680px;margin:0}
-section{padding:22px 0}h2{font-size:18px;margin:0 0 12px}.sub{color:var(--mute);font-size:13px;margin:-6px 0 12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
-.k{color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.6px}.v{font-size:22px;font-weight:650;margin-top:4px}
-.tbl{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}
-.tbl th,.tbl td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left}.tbl th{color:var(--mute);font-weight:500;font-size:12px;text-transform:uppercase}
-.tbl td.n{text-align:right;font-variant-numeric:tabular-nums}.scroll{overflow-x:auto}
-.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;border:1px solid var(--line)}
-.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}.mute{color:var(--mute)}
-.empty{color:var(--mute);background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:16px}
-ul.limits{color:var(--mute);padding-left:18px;margin:0}code{font-size:12px;color:var(--mute)}
-footer{border-top:1px solid var(--line);margin-top:28px;padding:20px 0 40px;color:var(--mute);font-size:13px}
+:root{--bg:#06080b;--panel:#0f1318;--line:#1c232c;--text:#e8ecef;--mute:#8a96a3;--acc:#5ee6c8;--dim:#3a4652}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc);text-decoration:none}
+header{position:absolute;top:0;left:0;right:0;z-index:3;padding:18px 16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-weight:700}.brand span{color:var(--mute);font-weight:400}
+nav a{margin-left:14px;color:var(--mute);font-size:14px}
+#stage{position:relative;height:88vh;min-height:520px;overflow:hidden}
+canvas{position:absolute;inset:0;width:100%;height:100%}
+.title{position:absolute;left:16px;top:70px;z-index:2;max-width:360px}
+.title .live{font-size:11px;letter-spacing:2px;color:var(--mute)}
+.title h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(34px,6vw,54px);margin:4px 0 8px}
+.title p{color:var(--mute);margin:0;font-size:14px}
+.stats{position:absolute;right:16px;top:70px;z-index:2;display:flex;gap:18px;background:rgba(15,19,24,.8);border:1px solid var(--line);border-radius:18px;padding:12px 18px}
+.stat .k{font-size:10px;letter-spacing:1.5px;color:var(--mute);text-transform:uppercase}.stat .v{font-size:18px;font-weight:600}
+.stagebox{position:absolute;left:16px;right:16px;bottom:18px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.hint{color:var(--dim);font-size:13px}
+.phase{background:rgba(15,19,24,.85);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:13px}
+.phase b{color:var(--acc)}
+main{max-width:1040px;margin:0 auto;padding:0 16px 60px}
+h2{font-size:18px;margin:34px 0 12px}
+.road{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.step .d{font-size:12px;color:var(--mute)}.step .n{font-weight:600;margin:4px 0}.step p{margin:0;color:var(--mute);font-size:13px}
+.step.on{border-color:var(--acc)}.step.on .n{color:var(--acc)}
+.sensors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
+.s{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 8px var(--acc)}.dot.off{background:#f85149;box-shadow:none}
+footer{color:var(--mute);font-size:13px;border-top:1px solid var(--line);margin-top:36px;padding-top:18px}
+@media(max-width:640px){.stats{top:auto;bottom:70px;left:16px;right:16px;justify-content:space-around}.title{top:64px}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">Koam Analytics <span>· independent on-chain risk research</span></div>
-<nav><a href="#now">Now</a><a href="#history">History</a><a href="#track">Track record</a><a href="#evidence">Evidence</a><a href="#method">Method</a><a href="https://x.com/koomydepeg">@koomydepeg</a></nav></div></header>
-<main class="wrap">
-<div class="hero"><h1>Stablecoin peg risk, read directly from the chain.</h1>
-<p>We monitor stablecoins and DeFi pools, put every deviation in historical context, and publish the outcome of every alert — including the ones we get wrong.</p></div>
+<header><div class="brand">Koam Analytics <span>· the brain</span></div>
+<nav><a href="#road">Growth</a><a href="#cells">Cells</a><a href="risk.html">Stablecoin risk</a><a href="https://x.com/koomydepeg">@koomydepeg</a></nav></header>
 
-<section id="history"><h2>Historical base rates — 262 depegs since 2021</h2>
-<p class="sub" id="hist-t"></p><div class="grid" id="hist-sum"></div><div style="height:12px"></div>
-<div class="scroll" id="hist-mec"></div></section>
+<div id="stage">
+<canvas id="c"></canvas>
+<div class="title"><div class="live">LIVE · STAGE <span id="stg">0</span></div><h1>Genesis</h1>
+<p>Stem cells finding each other. Each cell is a live sensor; it grows only with real data, verified alerts and money earned.</p></div>
+<div class="stats">
+<div class="stat"><div class="k">Cells</div><div class="v" id="nC">–</div></div>
+<div class="stat"><div class="k">Days of memory</div><div class="v" id="nD">–</div></div>
+<div class="stat"><div class="k">Synapses</div><div class="v" id="nS">–</div></div>
+</div>
+<div class="stagebox"><div class="hint">Drag to stir · a dead sensor goes dark</div>
+<div class="phase">Next milestone: <b id="nm">–</b></div></div>
+</div>
 
-<section id="now"><h2>Market now</h2><p class="sub" id="now-t"></p><div class="grid" id="regime"></div></section>
-
-<section><h2>Stablecoins on watch</h2><p class="sub" id="st-t"></p><div class="scroll" id="stables"></div></section>
-
-<section id="track"><h2>Public track record</h2><p class="sub">Every alert, what happened after, measured from our own snapshots.</p>
-<div class="grid" id="track-sum"></div><div style="height:12px"></div><div class="scroll" id="track-tbl"></div></section>
-
-<section><h2>DeFi liquidation map</h2><p class="sub">Aave V3 debt that becomes liquidatable if collateral prices fall.</p><div class="empty">Coming soon — data pipeline in deployment.</div></section>
-
-<section id="evidence"><h2>On-chain evidence</h2><p class="sub">Contracts we operate. Verify them yourself.</p><div class="scroll" id="contracts"></div></section>
-
-<section id="method"><h2>Method &amp; limits</h2><ul class="limits">
-<li>Peg data: DefiLlama stablecoin prices (aggregated), sampled every 15 min. On-chain pool reads (Curve, Uniswap V3, PancakeSwap V3, Camelot V3) are being added.</li>
-<li>"Re-pegged" = price back within 20 bps of $1. Time resolution = sampling interval.</li>
-<li>Historical base rates: 262 depeg episodes since 2021 (daily data; survivorship bias: only stablecoins still listed).</li>
-<li>Market regime: 4-state hidden Markov model on 11 years of public market data. It describes the current state; it does not predict prices.</li>
-<li>Public alerts are delayed. Nothing here is financial advice.</li></ul></section>
+<main>
+<h2 id="road">How it grows</h2>
+<div class="road" id="roadmap"></div>
+<h2 id="cells">Cells (live sensors)</h2>
+<div class="sensors" id="sensors"></div>
+<footer>Neurons = live sensors · Synapses = alerts published with a hash and verified later · Regions light up only after a public, dated hit. No simulated growth.</footer>
 </main>
-<footer><div class="wrap">Koam Analytics · built by an independent developer on free-tier infrastructure · <a href="https://x.com/koomydepeg">@koomydepeg</a></div></footer>
-<script>
-const $=id=>document.getElementById(id), j=u=>fetch(u,{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null);
-const empty=m=>`<div class="empty">${m}</div>`, fmt=(x,d=0)=>{if(x==null)return"—";let r=Number(x).toLocaleString("en-US",{maximumFractionDigits:d,minimumFractionDigits:d});return /^-0(\.0+)?$/.test(r)?r.slice(1):r};
-const card=(k,v,c="")=>`<div class="card"><div class="k">${k}</div><div class="v ${c}">${v}</div></div>`;
-(async()=>{
- const [rg,st,tr,ct,hi]=await Promise.all([j("data/regime.json"),j("data/stables.json"),j("data/track_record.json"),j("data/contracts.json"),j("data/history.json")]);
 
- if(hi){$("hist-t").textContent=`${hi.total} episodes · ${hi.desde} to ${hi.hasta} · daily data, DefiLlama`;
-  $("hist-sum").innerHTML=card("Re-pegged within 7 days",fmt(hi.repeg_7d_pct,1)+"%","ok")+card("Re-pegged eventually",fmt(hi.repeg_ever_pct,1)+"%","ok")+card("Median time to re-peg",fmt(hi.mediana_dias,1)+" days")+card("Spiralled (never recovered path)",fmt(hi.espiral_pct,1)+"%","warn")+card("If drop > 500 bps: spiral",fmt(hi.espiral_big_pct,1)+"%","bad");
-  $("hist-mec").innerHTML=`<table class="tbl"><tr><th>Mechanism</th><th class="n">Episodes</th><th class="n">Re-peg ≤7d</th><th class="n">Spiralled</th></tr>`+
-  hi.por_mecanismo.map(m=>`<tr><td>${m.mecanismo}</td><td class="n">${m.n}</td><td class="n">${fmt(m.rec7,1)}%</td><td class="n">${fmt(m.espiral,1)}%</td></tr>`).join("")+"</table>";}
- else $("hist-sum").innerHTML=empty("No data yet.");
- if(rg){const i=rg.indicadores||{},c={verde:"ok",ambar:"warn",rojo:"bad"}[rg.semaforo]||"",name={calma:"Calm",normal:"Normal",estres:"Stress",panico:"Panic"}[rg.regimen]||rg.regimen;
-  $("now-t").textContent=`Data as of ${rg.fecha_datos}`;
-  $("regime").innerHTML=card("Market regime",name,c)+card("BTC 20d volatility",fmt(rg.btc_vol_anual_20d*100)+"%")+card("BTC drawdown (90d high)",fmt((i.btc_dd_90||0)*100,1)+"%")+card("VIX",fmt(i.vix,1))+card("Fear & Greed",fmt(i.fng));}
- else $("regime").innerHTML=empty("No data yet.");
- if(st){$("st-t").textContent=`Snapshot ${st.t.slice(0,16)} UTC · ${st.stables.length} USD stablecoins with supply ≥ $100M`;
-  const rows=st.stables.filter(s=>s.estado!=="OK").concat(st.stables.filter(s=>s.estado==="OK").slice(0,6));
-  const cl={CRITICAL:"bad",ALERT:"warn",WATCH:"warn",OK:"ok"};
-  $("stables").innerHTML=`<table class="tbl"><tr><th>Stablecoin</th><th>Type</th><th class="n">Price</th><th class="n">Deviation</th><th class="n">Supply</th><th class="n">24h supply</th><th>Status</th></tr>`+
-  rows.map(s=>`<tr><td>${s.symbol}</td><td class="mute">${s.mecanismo||""}</td><td class="n">$${fmt(s.precio,4)}</td><td class="n">${fmt(s.desvio_bps)} bps</td><td class="n">$${fmt(s.supply_usd/1e9,2)}B</td><td class="n">${s.supply_chg_24h_pct==null?"—":fmt(s.supply_chg_24h_pct,1)+"%"}</td><td><span class="pill ${cl[s.estado]||""}">${s.estado}</span></td></tr>`).join("")+"</table>";}
- else $("stables").innerHTML=empty("No data yet.");
- if(tr&&tr.episodios&&tr.episodios.length){const r=tr.resumen;
-  $("track-sum").innerHTML=card("Alerts tracked",r.episodios)+card("Re-pegged",r.repegged,"ok")+card("Still open",r.abiertos,"warn")+card("Median time to re-peg",r.mediana_horas_repeg==null?"—":r.mediana_horas_repeg+" h");
-  $("track-tbl").innerHTML=`<table class="tbl"><tr><th>Alert (UTC)</th><th>Stablecoin</th><th>Type</th><th class="n">At alert</th><th class="n">Worst</th><th>Outcome</th></tr>`+
-  tr.episodios.map(e=>`<tr><td>${String(e.t0).slice(0,16).replace("T"," ")}</td><td>${e.symbol}</td><td class="mute">${e.tipo}</td><td class="n">${fmt(e.dev0_bps)} bps</td><td class="n">${fmt(e.peor_dev_bps)} bps</td><td>${e.estado==="repegged"?`<span class="ok">re-pegged in ${e.horas_abierto} h</span>`:e.estado==="open"?`<span class="warn">open · ${e.horas_abierto} h</span>`:"closed"}</td></tr>`).join("")+"</table>";}
- else {$("track-sum").innerHTML="";$("track-tbl").innerHTML=empty("First alerts are being tracked. Outcomes appear here 24 h after each alert.");}
- if(ct)$("contracts").innerHTML=`<table class="tbl"><tr><th>Chain</th><th>Contract</th><th>Address</th></tr>`+ct.contracts.map(c=>`<tr><td>${c.chain}</td><td>${c.name}</td><td><a href="${c.explorer}${c.address}" target="_blank" rel="noopener"><code>${c.address.slice(0,8)}…${c.address.slice(-6)}</code></a></td></tr>`).join("")+"</table>";
-})();
+<script>
+// Estado real: lo genera build_web_data.py desde la tabla de latido del _148 (18 sensores).
+let BRAIN = {
+  memory_since: "2026-09-22",
+  synapses: 0,
+  sensors: [
+    ["Basis scanner (omni-basis-scanner)", 1],
+    ["Market spreads (omni-lead-lag)", 1],
+    ["LP pool scanner (omni-pool-scanner)", 1],
+    ["Aave liquidation map", 1],
+    ["Long-tail sentinels (omni-longtail)", 1],
+    ["Derivatives risk (omni-risk)", 1],
+    ["Depeg hunter pool state", 1],
+    ["Node telemetry (Santiago 2)", 1],
+    ["Node telemetry (Hetzner)", 1],
+    ["Node telemetry (Azure VM 1)", 1],
+    ["Node telemetry (AWS us-east-2)", 0],
+    ["BTC on-chain cycle", 1],
+    ["Macro grabador (omni-macro)", 1],
+    ["News sensor (omni-news)", 1],
+    ["Macro whale sensor", 1],
+    ["Execution observer (koam-observer)", 1],
+    ["Pool tap observer", 1],
+    ["Spread probe (trading_trades)", 1]
+  ],
+  milestones: [
+    ["2026-09-22","Genesis","First sensors writing with time of knowledge."],
+    ["2026-10-10","Cells verified","Every sensor reads right; infrastructure frozen."],
+    ["2026-10-24","First blind test","Replay of past incidents with sealed code."],
+    ["2026-12-31","First money","Net profit or grant. Otherwise the organ goes quiet."],
+    ["2027-01-31","Forward proof","Hashed alerts judged against reality."]
+  ]
+};
+
+// Células madre que se buscan y se fusionan
+const cv=document.getElementById('c'),x=cv.getContext('2d');let W,H,dpr;
+function rs(){dpr=Math.min(2,devicePixelRatio||1);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}
+addEventListener('resize',rs);rs();
+let cells = BRAIN.sensors.map((s,i)=>({a:s[1],r:10+Math.random()*6,x:W/2+(Math.random()-.5)*W*.6,y:H/2+(Math.random()-.5)*H*.5,vx:0,vy:0,ph:Math.random()*6.28}));
+const dust=Array.from({length:220},()=>({x:Math.random()*W,y:Math.random()*H,z:Math.random()}));
+let mouse=null;cv.addEventListener('pointermove',e=>{const b=cv.getBoundingClientRect();mouse={x:e.clientX-b.left,y:e.clientY-b.top}});cv.addEventListener('pointerleave',()=>mouse=null);
+
+function renderBrain(b) {
+  BRAIN = b;
+  const alive = b.sensors.filter(s=>s[1]).length;
+  const days = Math.max(0,Math.floor((Date.now()-new Date(b.memory_since))/864e5));
+  const today = new Date(); const passed = b.milestones.filter(m=>new Date(m[0])<=today).length;
+  document.getElementById('nC').textContent = alive+"/"+b.sensors.length;
+  document.getElementById('nD').textContent = days;
+  document.getElementById('nS').textContent = b.synapses;
+  document.getElementById('stg').textContent = passed-1;
+  const nx = b.milestones[passed]; document.getElementById('nm').textContent = nx? nx[1]+" · "+nx[0] : "—";
+  document.getElementById('roadmap').innerHTML = b.milestones.map((m,i)=>`<div class="step ${i<passed?'on':''}"><div class="d">${m[0]}</div><div class="n">${m[1]}</div><p>${m[2]}</p></div>`).join('');
+  document.getElementById('sensors').innerHTML = b.sensors.map(s=>`<div class="s"><span class="dot ${s[1]?'':'off'}"></span>${s[0]}</div>`).join('');
+  if (W && H) {
+    cells = b.sensors.map((s,i)=>({a:s[1],r:10+Math.random()*6,x:W/2+(Math.random()-.5)*W*.6,y:H/2+(Math.random()-.5)*H*.5,vx:0,vy:0,ph:Math.random()*6.28}));
+  }
+}
+renderBrain(BRAIN);
+fetch("data/brain.json", {cache: "no-store"})
+  .then(r => r.ok ? r.json() : null)
+  .then(data => { if (data && data.sensors) renderBrain(data); })
+  .catch(() => {});
+
+function step(t){
+  x.fillStyle='#06080b';x.fillRect(0,0,W,H);
+  for(const d of dust){x.fillStyle=`rgba(180,200,210,${.15+.3*d.z})`;x.fillRect(d.x,d.y,1+d.z,1+d.z)}
+  const cx=W/2,cy=H*.52,pull=.00004*(1+days/10);
+  for(const c of cells){
+    c.vx+=(cx-c.x)*pull;c.vy+=(cy-c.y)*pull;
+    for(const o of cells){if(o===c)continue;const dx=c.x-o.x,dy=c.y-o.y,d=Math.hypot(dx,dy)||1,min=(c.r+o.r)*.9;if(d<min){c.vx+=dx/d*.05;c.vy+=dy/d*.05}}
+    if(mouse){const dx=c.x-mouse.x,dy=c.y-mouse.y,d=Math.hypot(dx,dy);if(d<120){c.vx+=dx/d*.3;c.vy+=dy/d*.3}}
+    c.vx*=.96;c.vy*=.96;c.x+=c.vx+Math.cos(t/2000+c.ph)*.15;c.y+=c.vy+Math.sin(t/1700+c.ph)*.15;
+  }
+  // membranas de fusión entre células vivas cercanas
+  for(let i=0;i<cells.length;i++)for(let j=i+1;j<cells.length;j++){const a=cells[i],b=cells[j];if(!a.a||!b.a)continue;const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<70){x.strokeStyle=`rgba(94,230,200,${.35*(1-d/70)})`;x.lineWidth=2;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+  for(const c of cells){
+    const p=1+.08*Math.sin(t/600+c.ph),r=c.r*p;
+    const g=x.createRadialGradient(c.x,c.y,0,c.x,c.y,r*2.4);
+    g.addColorStop(0,c.a?'rgba(220,255,245,.95)':'rgba(90,100,110,.6)');g.addColorStop(.35,c.a?'rgba(94,230,200,.45)':'rgba(60,70,80,.2)');g.addColorStop(1,'rgba(0,0,0,0)');
+    x.fillStyle=g;x.beginPath();x.arc(c.x,c.y,r*2.4,0,6.29);x.fill();
+    x.fillStyle=c.a?'#dffcf4':'#4a5560';x.beginPath();x.arc(c.x,c.y,r*.35,0,6.29);x.fill();
+  }
+  requestAnimationFrame(step);
+}
+requestAnimationFrame(step);
 </script>
-</body></html>
+</body>
+</html>

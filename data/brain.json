@@ -1,0 +1,105 @@
+{
+  "memory_since": "2026-09-22",
+  "synapses": 0,
+  "sensors": [
+    [
+      "Basis scanner (omni-basis-scanner)",
+      1
+    ],
+    [
+      "Market spreads (omni-lead-lag)",
+      1
+    ],
+    [
+      "LP pool scanner (omni-pool-scanner)",
+      1
+    ],
+    [
+      "Aave liquidation map",
+      1
+    ],
+    [
+      "Long-tail sentinels (omni-longtail)",
+      1
+    ],
+    [
+      "Derivatives risk (omni-risk)",
+      1
+    ],
+    [
+      "Depeg hunter pool state",
+      1
+    ],
+    [
+      "Node telemetry (Santiago 2)",
+      1
+    ],
+    [
+      "Node telemetry (Hetzner)",
+      1
+    ],
+    [
+      "Node telemetry (Azure VM 1)",
+      1
+    ],
+    [
+      "Node telemetry (AWS us-east-2)",
+      0
+    ],
+    [
+      "BTC on-chain cycle",
+      1
+    ],
+    [
+      "Macro grabador (omni-macro)",
+      1
+    ],
+    [
+      "News sensor (omni-news)",
+      1
+    ],
+    [
+      "Macro whale sensor",
+      1
+    ],
+    [
+      "Execution observer (koam-observer)",
+      1
+    ],
+    [
+      "Pool tap observer",
+      1
+    ],
+    [
+      "Spread probe (trading_trades)",
+      1
+    ]
+  ],
+  "milestones": [
+    [
+      "2026-09-22",
+      "Genesis",
+      "First sensors writing with time of knowledge."
+    ],
+    [
+      "2026-10-10",
+      "Cells verified",
+      "Every sensor reads right; infrastructure frozen."
+    ],
+    [
+      "2026-10-24",
+      "First blind test",
+      "Replay of past incidents with sealed code."
+    ],
+    [
+      "2026-12-31",
+      "First money",
+      "Net profit or grant. Otherwise the organ goes quiet."
+    ],
+    [
+      "2027-01-31",
+      "Forward proof",
+      "Hashed alerts judged against reality."
+    ]
+  ]
+}
