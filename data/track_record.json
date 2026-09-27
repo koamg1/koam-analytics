@@ -1,8 +1,8 @@
 {
- "generado_utc": "2026-09-27T07:47:04.746570+00:00",
+ "generado_utc": "2026-09-27T08:02:10.332234+00:00",
  "resumen": {
   "desde": "2026-09-22 21:12:01.823276+00:00",
-  "hasta": "2026-09-27 07:45:21.561053+00:00",
+  "hasta": "2026-09-27 08:00:12.659709+00:00",
   "episodios": 13,
   "episodios_precio": 10,
   "repegged": 6,
@@ -25,9 +25,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -52.5,
    "ultimo_supply": 124377987.36701035,
-   "t_ultimo": "2026-09-27T07:45:21.561053+00:00",
+   "t_ultimo": "2026-09-27T08:00:12.659709+00:00",
    "id": "avUSD_202609270715",
-   "horas_abierto": 0.5,
+   "horas_abierto": 0.8,
    "estado": "open",
    "publica": false
   },
@@ -94,7 +94,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T00:30:11.375832+00:00",
    "id": "PYUSD_202609240330",
-   "horas_abierto": 76.3,
+   "horas_abierto": 76.5,
    "estado": "closed",
    "publica": true
   },
@@ -110,7 +110,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T01:30:11.773806+00:00",
    "id": "USDai_202609232200",
-   "horas_abierto": 81.8,
+   "horas_abierto": 82.0,
    "estado": "closed",
    "publica": false
   },
@@ -177,9 +177,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -74.6,
    "ultimo_supply": 151451984.73512167,
-   "t_ultimo": "2026-09-27T07:45:21.561053+00:00",
+   "t_ultimo": "2026-09-27T08:00:12.659709+00:00",
    "id": "FRAX_202609222112",
-   "horas_abierto": 106.6,
+   "horas_abierto": 106.8,
    "estado": "open",
    "publica": false
   },
@@ -195,7 +195,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-23T01:30:10.260536+00:00",
    "id": "USX_202609222112",
-   "horas_abierto": 106.6,
+   "horas_abierto": 106.8,
    "estado": "closed",
    "publica": false
   },
@@ -211,9 +211,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -212.0,
    "ultimo_supply": 310294505.3056769,
-   "t_ultimo": "2026-09-27T07:45:21.561053+00:00",
+   "t_ultimo": "2026-09-27T08:00:12.659709+00:00",
    "id": "apxUSD_202609222112",
-   "horas_abierto": 106.6,
+   "horas_abierto": 106.8,
    "estado": "open",
    "publica": true
   },
@@ -229,9 +229,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -52.9,
    "ultimo_supply": 148811577.9500866,
-   "t_ultimo": "2026-09-27T07:45:21.561053+00:00",
+   "t_ultimo": "2026-09-27T08:00:12.659709+00:00",
    "id": "satUSD_202609222112",
-   "horas_abierto": 106.6,
+   "horas_abierto": 106.8,
    "estado": "open",
    "publica": true
   }
