@@ -128,7 +128,7 @@ fetch("data/brain.json", {cache: "no-store"})
 function step(t){
   x.fillStyle='#06080b';x.fillRect(0,0,W,H);
   for(const d of dust){x.fillStyle=`rgba(180,200,210,${.15+.3*d.z})`;x.fillRect(d.x,d.y,1+d.z,1+d.z)}
-  const cx=W/2,cy=H*.52,pull=.00004*(1+days/10);
+  const cx=W/2,cy=H*.52,pull=.00004*(1+Math.max(0,(Date.now()-new Date(BRAIN.memory_since))/864e6));
   for(const c of cells){
     c.vx+=(cx-c.x)*pull;c.vy+=(cy-c.y)*pull;
     for(const o of cells){if(o===c)continue;const dx=c.x-o.x,dy=c.y-o.y,d=Math.hypot(dx,dy)||1,min=(c.r+o.r)*.9;if(d<min){c.vx+=dx/d*.05;c.vy+=dy/d*.05}}
