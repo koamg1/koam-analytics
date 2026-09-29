@@ -1,8 +1,8 @@
 {
- "generado_utc": "2026-09-29T05:32:08.724128+00:00",
+ "generado_utc": "2026-09-29T05:47:15.951587+00:00",
  "resumen": {
   "desde": "2026-09-22 21:12:01.823276+00:00",
-  "hasta": "2026-09-29 05:30:14.348051+00:00",
+  "hasta": "2026-09-29 05:45:21.941141+00:00",
   "episodios": 17,
   "episodios_precio": 13,
   "repegged": 10,
@@ -42,7 +42,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-27T22:15:05.841367+00:00",
    "id": "pUSD_202609272115",
-   "horas_abierto": 32.3,
+   "horas_abierto": 32.5,
    "estado": "closed",
    "publica": false
   },
@@ -160,7 +160,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T00:30:11.375832+00:00",
    "id": "PYUSD_202609240330",
-   "horas_abierto": 122.0,
+   "horas_abierto": 122.3,
    "estado": "closed",
    "publica": true
   },
@@ -176,7 +176,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T01:30:11.773806+00:00",
    "id": "USDai_202609232200",
-   "horas_abierto": 127.5,
+   "horas_abierto": 127.8,
    "estado": "closed",
    "publica": false
   },
@@ -243,9 +243,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -83.4,
    "ultimo_supply": 150108050.91448694,
-   "t_ultimo": "2026-09-29T05:30:14.348051+00:00",
+   "t_ultimo": "2026-09-29T05:45:21.941141+00:00",
    "id": "FRAX_202609222112",
-   "horas_abierto": 152.3,
+   "horas_abierto": 152.6,
    "estado": "open",
    "publica": false
   },
@@ -261,7 +261,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-23T01:30:10.260536+00:00",
    "id": "USX_202609222112",
-   "horas_abierto": 152.3,
+   "horas_abierto": 152.6,
    "estado": "closed",
    "publica": false
   },
@@ -277,9 +277,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -92.3,
    "ultimo_supply": 314370137.11213374,
-   "t_ultimo": "2026-09-29T05:30:14.348051+00:00",
+   "t_ultimo": "2026-09-29T05:45:21.941141+00:00",
    "id": "apxUSD_202609222112",
-   "horas_abierto": 152.3,
+   "horas_abierto": 152.6,
    "estado": "open",
    "publica": true
   },
@@ -297,7 +297,7 @@
    "ultimo_supply": 148806295.93576112,
    "t_ultimo": "2026-09-27T20:00:12.980776+00:00",
    "id": "satUSD_202609222112",
-   "horas_abierto": 152.3,
+   "horas_abierto": 152.6,
    "estado": "open",
    "publica": true
   }
