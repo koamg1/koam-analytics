@@ -1,12 +1,12 @@
 {
- "generado_utc": "2026-10-01T01:02:07.121290+00:00",
+ "generado_utc": "2026-10-01T01:17:06.818018+00:00",
  "resumen": {
   "desde": "2026-09-22 21:12:01.823276+00:00",
-  "hasta": "2026-10-01 01:00:08.464600+00:00",
+  "hasta": "2026-10-01 01:15:07.639704+00:00",
   "episodios": 18,
   "episodios_precio": 13,
   "repegged": 10,
-  "abiertos": 4,
+  "abiertos": 3,
   "repeg_24h_pct": 69.2,
   "mediana_horas_repeg": 2.0,
   "resolucion_min": 15,
@@ -23,12 +23,10 @@
    "tipo": "supply",
    "peor_dev_bps": 3.3,
    "t_repeg": null,
-   "ultimo_dev_bps": 2.6,
-   "ultimo_supply": 1186938129.224082,
-   "t_ultimo": "2026-10-01T01:00:08.464600+00:00",
+   "t_fin": "2026-10-01T01:15:07.639704+00:00",
    "id": "USDGO_202609290615",
-   "horas_abierto": 42.8,
-   "estado": "open",
+   "horas_abierto": 43.0,
+   "estado": "closed",
    "publica": false
   },
   {
@@ -60,7 +58,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-27T22:15:05.841367+00:00",
    "id": "pUSD_202609272115",
-   "horas_abierto": 75.8,
+   "horas_abierto": 76.0,
    "estado": "closed",
    "publica": false
   },
@@ -178,7 +176,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T00:30:11.375832+00:00",
    "id": "PYUSD_202609240330",
-   "horas_abierto": 165.5,
+   "horas_abierto": 165.8,
    "estado": "closed",
    "publica": false
   },
@@ -194,7 +192,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T01:30:11.773806+00:00",
    "id": "USDai_202609232200",
-   "horas_abierto": 171.0,
+   "horas_abierto": 171.3,
    "estado": "closed",
    "publica": false
   },
@@ -259,11 +257,11 @@
    "tipo": "price",
    "peor_dev_bps": -114.7,
    "t_repeg": null,
-   "ultimo_dev_bps": -77.4,
-   "ultimo_supply": 148051227.10301515,
-   "t_ultimo": "2026-10-01T01:00:08.464600+00:00",
+   "ultimo_dev_bps": -77.3,
+   "ultimo_supply": 148066750.9491816,
+   "t_ultimo": "2026-10-01T01:15:07.639704+00:00",
    "id": "FRAX_202609222112",
-   "horas_abierto": 195.8,
+   "horas_abierto": 196.1,
    "estado": "open",
    "publica": false
   },
@@ -279,7 +277,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-23T01:30:10.260536+00:00",
    "id": "USX_202609222112",
-   "horas_abierto": 195.8,
+   "horas_abierto": 196.1,
    "estado": "closed",
    "publica": false
   },
@@ -295,9 +293,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -118.8,
    "ultimo_supply": 313517151.0619766,
-   "t_ultimo": "2026-10-01T01:00:08.464600+00:00",
+   "t_ultimo": "2026-10-01T01:15:07.639704+00:00",
    "id": "apxUSD_202609222112",
-   "horas_abierto": 195.8,
+   "horas_abierto": 196.1,
    "estado": "open",
    "publica": true
   },
@@ -313,9 +311,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -159.9,
    "ultimo_supply": 134717881.51652426,
-   "t_ultimo": "2026-10-01T01:00:08.464600+00:00",
+   "t_ultimo": "2026-10-01T01:15:07.639704+00:00",
    "id": "satUSD_202609222112",
-   "horas_abierto": 195.8,
+   "horas_abierto": 196.1,
    "estado": "open",
    "publica": true
   }
