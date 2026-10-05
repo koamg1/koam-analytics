@@ -1,6 +1,6 @@
 {
-  "generado_utc": "2026-10-04T12:01:40.634655+00:00",
-  "fecha_datos": "2026-10-04",
+  "generado_utc": "2026-10-05T12:02:03.751443+00:00",
+  "fecha_datos": "2026-10-05",
   "capa": "C2_regimen",
   "modelo": "regime_v1",
   "regimen": "calma",
@@ -12,19 +12,19 @@
   },
   "p_caida_btc_10pct_10d": null,
   "predictor_dd10_validado": false,
-  "btc_vol_anual_20d": 0.42,
+  "btc_vol_anual_20d": 0.392,
   "indicadores": {
-    "btc_dd_90": -0.0151,
-    "btc_mom_30": 0.0685,
-    "spx_rv_20": 0.0907,
+    "btc_dd_90": -0.005,
+    "btc_mom_30": 0.0766,
+    "spx_rv_20": 0.0886,
     "vix": 15.31,
-    "vix_z_1y": -0.8073,
-    "dxy_chg_20": 0.028,
-    "y10_chg_20": 0.28,
-    "credito_chg_20": 0.0211,
+    "vix_z_1y": -0.8057,
+    "dxy_chg_20": 0.0245,
+    "y10_chg_20": 0.27,
+    "credito_chg_20": 0.0227,
     "stable_chg_30": 0.0107,
-    "fng": 65.0,
-    "btc_spx_corr_60": -0.0773
+    "fng": 70.0,
+    "btc_spx_corr_60": -0.0797
   },
   "semaforo": "verde"
 }
