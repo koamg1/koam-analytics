@@ -1,8 +1,8 @@
 {
- "generado_utc": "2026-10-11T23:02:08.425411+00:00",
+ "generado_utc": "2026-10-11T23:17:08.392326+00:00",
  "resumen": {
   "desde": "2026-09-22 21:12:01.823276+00:00",
-  "hasta": "2026-10-11 23:00:10.934673+00:00",
+  "hasta": "2026-10-11 23:15:14.543128+00:00",
   "episodios": 42,
   "episodios_precio": 15,
   "repegged": 10,
@@ -25,9 +25,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -57.3,
    "ultimo_supply": 784774730.9684526,
-   "t_ultimo": "2026-10-11T23:00:10.934673+00:00",
+   "t_ultimo": "2026-10-11T23:15:14.543128+00:00",
    "id": "OUSD_202610112230",
-   "horas_abierto": 0.5,
+   "horas_abierto": 0.8,
    "estado": "open",
    "publica": false
   },
@@ -43,7 +43,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-09T05:30:07.939173+00:00",
    "id": "USDC_202610090430",
-   "horas_abierto": 66.5,
+   "horas_abierto": 66.8,
    "estado": "closed",
    "publica": false
   },
@@ -59,7 +59,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-09T05:30:07.939173+00:00",
    "id": "USDG_202610090430",
-   "horas_abierto": 66.5,
+   "horas_abierto": 66.8,
    "estado": "closed",
    "publica": false
   },
@@ -75,7 +75,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-09T03:30:06.852712+00:00",
    "id": "USDC_202610090230",
-   "horas_abierto": 68.5,
+   "horas_abierto": 68.8,
    "estado": "closed",
    "publica": false
   },
@@ -91,7 +91,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-09T03:30:06.852712+00:00",
    "id": "USDG_202610090230",
-   "horas_abierto": 68.5,
+   "horas_abierto": 68.8,
    "estado": "closed",
    "publica": false
   },
@@ -107,7 +107,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-10T01:30:08.176120+00:00",
    "id": "MOVEUSD_202610090130",
-   "horas_abierto": 69.5,
+   "horas_abierto": 69.8,
    "estado": "closed",
    "publica": false
   },
@@ -123,7 +123,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-09T01:30:07.544147+00:00",
    "id": "USDG_202610090030",
-   "horas_abierto": 70.5,
+   "horas_abierto": 70.8,
    "estado": "closed",
    "publica": false
   },
@@ -139,7 +139,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-11T01:30:16.939864+00:00",
    "id": "AUSD_202610082230",
-   "horas_abierto": 72.5,
+   "horas_abierto": 72.8,
    "estado": "closed",
    "publica": false
   },
@@ -155,7 +155,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-08T22:30:07.744227+00:00",
    "id": "FDUSD_202610082130",
-   "horas_abierto": 73.5,
+   "horas_abierto": 73.8,
    "estado": "closed",
    "publica": false
   },
@@ -171,7 +171,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-08T22:30:07.744227+00:00",
    "id": "USD1_202610082130",
-   "horas_abierto": 73.5,
+   "horas_abierto": 73.8,
    "estado": "closed",
    "publica": false
   },
@@ -187,7 +187,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-08T22:30:07.744227+00:00",
    "id": "OUSD_202610081930",
-   "horas_abierto": 75.5,
+   "horas_abierto": 75.8,
    "estado": "closed",
    "publica": false
   },
@@ -203,7 +203,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-08T21:30:06.951338+00:00",
    "id": "PYUSD_202610081930",
-   "horas_abierto": 75.5,
+   "horas_abierto": 75.8,
    "estado": "closed",
    "publica": false
   },
@@ -219,7 +219,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-08T22:30:07.744227+00:00",
    "id": "USDC_202610081830",
-   "horas_abierto": 76.5,
+   "horas_abierto": 76.8,
    "estado": "closed",
    "publica": false
   },
@@ -235,7 +235,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-08T22:30:07.744227+00:00",
    "id": "USDG_202610081830",
-   "horas_abierto": 76.5,
+   "horas_abierto": 76.8,
    "estado": "closed",
    "publica": false
   },
@@ -251,7 +251,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-08T22:30:07.744227+00:00",
    "id": "rwaUSDi_202610081830",
-   "horas_abierto": 76.5,
+   "horas_abierto": 76.8,
    "estado": "closed",
    "publica": false
   },
@@ -267,7 +267,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-09T01:30:07.544147+00:00",
    "id": "crvUSD_202610072130",
-   "horas_abierto": 97.5,
+   "horas_abierto": 97.8,
    "estado": "closed",
    "publica": false
   },
@@ -283,7 +283,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-09T01:30:07.544147+00:00",
    "id": "USDTB_202610071930",
-   "horas_abierto": 99.5,
+   "horas_abierto": 99.8,
    "estado": "closed",
    "publica": false
   },
@@ -299,7 +299,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-06T23:30:08.542511+00:00",
    "id": "YLDS_202610061830",
-   "horas_abierto": 124.5,
+   "horas_abierto": 124.8,
    "estado": "closed",
    "publica": false
   },
@@ -315,7 +315,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-05T11:30:11.333656+00:00",
    "id": "PYUSD_202610051030",
-   "horas_abierto": 156.5,
+   "horas_abierto": 156.8,
    "estado": "closed",
    "publica": false
   },
@@ -331,7 +331,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-05T11:30:11.333656+00:00",
    "id": "USDC_202610051030",
-   "horas_abierto": 156.5,
+   "horas_abierto": 156.8,
    "estado": "closed",
    "publica": false
   },
@@ -347,7 +347,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-04T04:15:06.755571+00:00",
    "id": "USDai_202610030915",
-   "horas_abierto": 205.8,
+   "horas_abierto": 206.0,
    "estado": "closed",
    "publica": false
   },
@@ -363,7 +363,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-03T01:15:04.844780+00:00",
    "id": "MOVEUSD_202610020115",
-   "horas_abierto": 237.8,
+   "horas_abierto": 238.0,
    "estado": "closed",
    "publica": false
   },
@@ -379,7 +379,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-01T17:15:07.841341+00:00",
    "id": "RLUSD_202610011415",
-   "horas_abierto": 248.8,
+   "horas_abierto": 249.0,
    "estado": "closed",
    "publica": false
   },
@@ -395,9 +395,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -50.3,
    "ultimo_supply": 1653744937.9569924,
-   "t_ultimo": "2026-10-11T23:00:10.934673+00:00",
+   "t_ultimo": "2026-10-11T23:15:14.543128+00:00",
    "id": "USDf_202610010515",
-   "horas_abierto": 257.8,
+   "horas_abierto": 258.0,
    "estado": "open",
    "publica": true
   },
@@ -413,7 +413,7 @@
    "t_repeg": null,
    "t_fin": "2026-10-01T01:15:07.639704+00:00",
    "id": "USDGO_202609290615",
-   "horas_abierto": 304.8,
+   "horas_abierto": 305.0,
    "estado": "closed",
    "publica": false
   },
@@ -446,7 +446,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-27T22:15:05.841367+00:00",
    "id": "pUSD_202609272115",
-   "horas_abierto": 337.8,
+   "horas_abierto": 338.0,
    "estado": "closed",
    "publica": false
   },
@@ -564,7 +564,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T00:30:11.375832+00:00",
    "id": "PYUSD_202609240330",
-   "horas_abierto": 427.5,
+   "horas_abierto": 427.8,
    "estado": "closed",
    "publica": false
   },
@@ -580,7 +580,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-25T01:30:11.773806+00:00",
    "id": "USDai_202609232200",
-   "horas_abierto": 433.0,
+   "horas_abierto": 433.3,
    "estado": "closed",
    "publica": false
   },
@@ -647,9 +647,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -78.2,
    "ultimo_supply": 151913261.36930528,
-   "t_ultimo": "2026-10-11T23:00:10.934673+00:00",
+   "t_ultimo": "2026-10-11T23:15:14.543128+00:00",
    "id": "FRAX_202609222112",
-   "horas_abierto": 457.8,
+   "horas_abierto": 458.1,
    "estado": "open",
    "publica": false
   },
@@ -665,7 +665,7 @@
    "t_repeg": null,
    "t_fin": "2026-09-23T01:30:10.260536+00:00",
    "id": "USX_202609222112",
-   "horas_abierto": 457.8,
+   "horas_abierto": 458.1,
    "estado": "closed",
    "publica": false
   },
@@ -681,9 +681,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -116.6,
    "ultimo_supply": 306694402.2757393,
-   "t_ultimo": "2026-10-11T23:00:10.934673+00:00",
+   "t_ultimo": "2026-10-11T23:15:14.543128+00:00",
    "id": "apxUSD_202609222112",
-   "horas_abierto": 457.8,
+   "horas_abierto": 458.1,
    "estado": "open",
    "publica": true
   },
@@ -699,9 +699,9 @@
    "t_repeg": null,
    "ultimo_dev_bps": -60.9,
    "ultimo_supply": 126486825.5684509,
-   "t_ultimo": "2026-10-11T23:00:10.934673+00:00",
+   "t_ultimo": "2026-10-11T23:15:14.543128+00:00",
    "id": "satUSD_202609222112",
-   "horas_abierto": 457.8,
+   "horas_abierto": 458.1,
    "estado": "open",
    "publica": true
   }
